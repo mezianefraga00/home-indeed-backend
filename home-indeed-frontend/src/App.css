@@ -1,0 +1,50 @@
+.App {
+  text-align: center;
+  background-color: rgb(255, 254, 254);
+}
+.main > * {
+  background-image: linear-gradient(rgb(19, 0, 192), rgb(187, 187, 245));
+  color: white;
+  height: 50px;
+  text-align: left;
+}
+
+.search input button {
+  display: table;
+}
+.imagehome {
+  height: 500px;
+  z-index: -1;
+}
+.containerannoce {
+  margin-top: 10%;
+}
+.containerlo > div {
+  z-index: 1000;
+  position: fixed;
+  margin: auto;
+  width: 1000px;
+  float: center;
+}
+.containerlo > img {
+  z-index: -1;
+}
+.imgdash {
+  border-radius: 25px;
+  width: 300px;
+  height: 200px;
+}
+.btn-outline-info {
+  padding: 4px 100px !important;
+  border-radius: 25px !important;
+}
+.home-info {
+  line-height: 0.5pt;
+}
+.dashform {
+  padding: 30px;
+}
+.dashbtn {
+  position: absolute;
+  right: 20px;
+}
