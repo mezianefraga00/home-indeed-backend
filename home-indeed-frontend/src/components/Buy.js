@@ -36,7 +36,7 @@ export default function Buy() {
                     {home.location.zipcode}&nbsp;
                   </p>
                 </div>
-                <button type="button" class="btn btn-outline-info">
+                <button type="button" className="btn btn-outline-info">
                   Request Info
                 </button>
               </div>

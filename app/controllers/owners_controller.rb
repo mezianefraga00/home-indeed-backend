@@ -4,7 +4,8 @@ class OwnersController < ApplicationController
         @owners = Owner.all
         render json: @owners
         end
-    
+   
+
       def show
     @owners = Owner.find(params[:id])
       render json: @owners

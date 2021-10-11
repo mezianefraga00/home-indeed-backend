@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "../../App.css";
 import Requests from "./Requests";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 
-export default function Dashbord() {
+export default function Dashbord(message) {
+  console.log(message);
   const [client, setClient] = useState({});
   useEffect(() => {
     fetch("/owners/1")
@@ -12,10 +13,16 @@ export default function Dashbord() {
         setClient(owner);
       });
   }, []);
+
   return (
     <>
+      {!message ? (
+        <div className="alert-primary">Your home has been added, Thank you</div>
+      ) : (
+        <></>
+      )}
       <div className="dashButton">
-        <NavLink className="btn btn-success" to="/dashbord/addhome">
+        <NavLink className="btn btn-success" to="/dashbord/addlocation">
           Add Home
         </NavLink>
         &nbsp;

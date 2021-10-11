@@ -25,7 +25,7 @@ export default function Login({ open, loginBoxOpen }) {
                       id="typeEmailX"
                       className="form-control form-control-lg"
                     />
-                    <label className="form-label" for="typeEmailX">
+                    <label className="form-label" htmlFor="typeEmailX">
                       Email
                     </label>
                   </div>
@@ -36,7 +36,7 @@ export default function Login({ open, loginBoxOpen }) {
                       id="typePasswordX"
                       className="form-control form-control-lg"
                     />
-                    <label className="form-label" for="typePasswordX">
+                    <label className="form-label" htmlFor="typePasswordX">
                       Password
                     </label>
                   </div>
@@ -48,7 +48,7 @@ export default function Login({ open, loginBoxOpen }) {
                       value=""
                       id="form1Example3"
                     />
-                    <label className="form-check-label" for="form1Example3">
+                    <label className="form-check-label" htmlFor="form1Example3">
                       {" "}
                       Remember password{" "}
                     </label>

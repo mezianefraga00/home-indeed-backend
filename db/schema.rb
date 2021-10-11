@@ -27,11 +27,11 @@ ActiveRecord::Schema.define(version: 2021_10_07_162314) do
     t.integer "nbr_bedroom"
     t.integer "nbr_bathroom"
     t.integer "price"
-    t.integer "owner_id", null: false
-    t.integer "location_id", null: false
+    t.string "description"
+    t.integer "owner_id"
+    t.integer "location_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.text "description"
     t.index ["location_id"], name: "index_homes_on_location_id"
     t.index ["owner_id"], name: "index_homes_on_owner_id"
   end
