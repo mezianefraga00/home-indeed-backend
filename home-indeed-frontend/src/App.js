@@ -7,6 +7,7 @@ import AddHome from "./components/ownerDashbord/AddHome";
 import AddLocation from "./components/ownerDashbord/AddLocation";
 import DeleteHome from "./components/ownerDashbord/DeleteHome";
 import UpdateHome from "./components/ownerDashbord/UpdateHome";
+import SearchLocationInput from "./components/search/SearchLocationInput";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 function App() {
   return (
@@ -26,6 +27,11 @@ function App() {
         <Route exact path="/dashbord/addlocation" component={AddLocation} />
         <Route exact path="/dashbord/deletehome" component={DeleteHome} />
         <Route exact path="/dashbord/updatehome" component={UpdateHome} />
+        <Route
+          exact
+          path="/SearchLocationInput"
+          component={SearchLocationInput}
+        />
       </Switch>
     </Router>
   );

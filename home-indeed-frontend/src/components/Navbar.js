@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import { useLocation } from "react-router";
 
 import Login from "./Login";
+import SearchLocationInput from "./search/SearchLocationInput";
 function Navbar() {
   let location = useLocation();
   console.log(location);
@@ -58,17 +59,12 @@ function Navbar() {
             <form className="form-inline my-2 my-lg-0">
               <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li>
-                  <input
-                    className="form-control mr-sm-2"
-                    type="search"
-                    placeholder="Search"
-                    aria-label="Search"
-                  ></input>
+                  <SearchLocationInput />
                 </li>
                 <li>
                   <button
                     className="btn btn-outline-success my-2 my-sm-0"
-                    type="submit"
+                    type="search"
                   >
                     Search
                   </button>

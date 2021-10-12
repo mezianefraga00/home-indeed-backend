@@ -37,6 +37,7 @@ export default function DeleteHome() {
             </li>
 
             <li className="list-group-item" key={"loc" + home.id}>
+              <h3>Adress</h3>
               <p>
                 {home.location.street}&nbsp;
                 {home.location.city}&nbsp;
@@ -44,56 +45,60 @@ export default function DeleteHome() {
                 {home.location.zipcode}&nbsp;
               </p>
             </li>
-            <button
-              type="button"
-              onClick={() => setConfirm(home.id)}
-              class="btn btn-primary"
-              data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
-            >
-              Launch demo modal
-            </button>
+            <li className="list-group-item" key={"del" + home.id}>
+              <button
+                type="button"
+                onClick={() => setConfirm(home.id)}
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                Delete Home
+              </button>
 
-            <div
-              class="modal fade"
-              id="exampleModal"
-              tabindex="-1"
-              aria-labelledby="exampleModalLabel"
-              aria-hidden="true"
-            >
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">
-                      Modal title
-                    </h5>
-                    <button
-                      type="button"
-                      class="btn-close"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    ></button>
-                  </div>
-                  <div class="modal-body">...</div>
-                  <div class="modal-footer">
-                    <button
-                      type="button"
-                      class="btn btn-secondary"
-                      data-bs-dismiss="modal"
-                    >
-                      Close
-                    </button>
-                    <button
-                      type="button"
-                      class="btn btn-primary"
-                      onClick={() => handleDelete(value)}
-                    >
-                      Save changes
-                    </button>
+              <div
+                class="modal fade"
+                id="exampleModal"
+                tabindex="-1"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">
+                        Alert
+                      </h5>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body">
+                      Would you like to delete this home permanently
+                    </div>
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                      >
+                        Close
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-primary"
+                        onClick={() => handleDelete(value)}
+                      >
+                        Confirm
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </li>
           </>
         ))}
 
