@@ -13,6 +13,16 @@ class LocationsController < ApplicationController
         @location = Location.new
       end
     
+
+      def findlocation 
+        
+       search= Location.where("adress LIKE '%#{params[:adress].downcase}%'" )
+        render json: search
+
+      end
+
+
+
       def create
         location = Location.new(article_params)
     
@@ -46,6 +56,6 @@ class LocationsController < ApplicationController
     
       
         def article_params
-          params.require(:location).permit(:street, :city, :state, :zipcode, :app_nbr)
+          params.permit(:adress)
         end
 end

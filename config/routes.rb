@@ -14,6 +14,13 @@ Rails.application.routes.draw do
 
 
   resources :locations, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+  
+  get "/search/:adress", to: "locations#findlocation"
+
+
+  
+
+
 
 
 

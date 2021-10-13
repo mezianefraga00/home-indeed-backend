@@ -61,14 +61,7 @@ function Navbar() {
                 <li>
                   <SearchLocationInput />
                 </li>
-                <li>
-                  <button
-                    className="btn btn-outline-success my-2 my-sm-0"
-                    type="search"
-                  >
-                    Search
-                  </button>
-                </li>
+                <li></li>
                 <li>
                   <button
                     className="btn btn-danger btn-pill"

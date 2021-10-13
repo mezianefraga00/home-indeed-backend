@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../../App.css";
-import Requests from "./Requests";
+import Requests from "../allrequests/Requests";
 import { NavLink, useHistory } from "react-router-dom";
 
 export default function Dashbord(message) {

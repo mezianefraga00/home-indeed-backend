@@ -14,13 +14,9 @@ def index
   end
 
   def create
-    request = Request.new(article_params)
-
-    if request.save
-        render json: request, status: :created
-    else
-      render :new, status: :unprocessable_entity
-    end
+    @request = Request.create!(article_params)
+   
+    render json: @request, status: :created
   end
 
   def edit

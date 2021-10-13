@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-
+import { withRouter } from "react-router";
 import "../../App.css";
-import { useLocation } from "react-router";
+
 export default function DeleteHome() {
   const [value, setConfirm] = useState();
   const owner_id = 1;
   const [myhomes, setHomes] = useState([]);
+  const [response, setErros] = useState("");
 
   useEffect(() => {
     fetch("/myhomes/" + owner_id)
@@ -17,12 +18,13 @@ export default function DeleteHome() {
   function handleDelete(id) {
     fetch(`/homes/${id}`, {
       method: "DELETE",
-    }).then((r) => {
-      if (r.ok) {
-        console.log("homedeleted");
-      }
-    });
+    })
+      .then((response) => response.json())
+      .then((res) => {
+        setErros((response) => [...response, res]);
+      });
   }
+  console.log(response);
   return (
     <div>
       <ul className="list-group list-group-flush">
@@ -38,12 +40,7 @@ export default function DeleteHome() {
 
             <li className="list-group-item" key={"loc" + home.id}>
               <h3>Adress</h3>
-              <p>
-                {home.location.street}&nbsp;
-                {home.location.city}&nbsp;
-                {home.location.state}&nbsp;
-                {home.location.zipcode}&nbsp;
-              </p>
+              <p>{home.location.address}&nbsp;</p>
             </li>
             <li className="list-group-item" key={"del" + home.id}>
               <button
@@ -90,6 +87,7 @@ export default function DeleteHome() {
                       <button
                         type="button"
                         class="btn btn-primary"
+                        data-bs-dismiss="modal"
                         onClick={() => handleDelete(value)}
                       >
                         Confirm

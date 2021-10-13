@@ -42,7 +42,7 @@ end
 def destroy
 @home = Home.find(params[:id])
 @home.destroy
-render json: @home, status: :deleted
+render json: @home
 
 
 end

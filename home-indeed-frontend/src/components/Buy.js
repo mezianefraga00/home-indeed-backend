@@ -28,13 +28,7 @@ export default function Buy() {
                     {home.nbr_bedroom} ba {home.nbr_bathroom} ba {home.surface}{" "}
                     sqft
                   </h4>
-                  <p>
-                    {home.location.app_nbr}&nbsp;
-                    {home.location.street}&nbsp;
-                    {home.location.city}&nbsp;
-                    {home.location.state}&nbsp;
-                    {home.location.zipcode}&nbsp;
-                  </p>
+                  <p>{home.location.adress}&nbsp;</p>
                 </div>
                 <button type="button" className="btn btn-outline-info">
                   Request Info

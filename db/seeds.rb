@@ -8,15 +8,18 @@ owner7 = Owner.create(name: "Shyla", phone_nbr: "672 3217832", login:"shy", pass
 owner8 = Owner.create(name: "Persephone", phone_nbr: "432 3217832", login:"per", password_digest: "abcd", email: "per@gmail.com" )
 owner9 = Owner.create(name: "Katrina", phone_nbr: "232 3217832", login:"kat", password_digest: "abcd", email: "kat@gmail.com" )
 
-location1 = Location.create(street: "Weldon", city: "Staten Island", state: "NY", zipcode: "10432", app_nbr: "3")
-location2 = Location.create(street: "Preston", city: "Brooklyn", state: "NY", zipcode: "10456", app_nbr: "89")
-location3 = Location.create(street: "Seymour", city: "Batavia", state: "NY", zipcode: "10754", app_nbr: "12")
-location4 = Location.create(street: "Dey", city: "Buffalo", state: "NY", zipcode: "10294", app_nbr: "93")
-location5 = Location.create(street: "Prospect", city: "Canandaigua", state: "NY", zipcode: "10543", app_nbr: "113")
-location6 = Location.create(street: "Pelham", city: "Corning", state: "NY", zipcode: "10355", app_nbr: "56")
-location7 = Location.create(street: "Ovignton", city: "Cortland", state: "NY", zipcode: "10654", app_nbr: "32")
-location8 = Location.create(street: "Woodling", city: "Dunkirk", state: "NY", zipcode: "10345", app_nbr: "23")
-location9 = Location.create(street: "Brida", city: "Elmira", state: "NY", zipcode: "10674", app_nbr: "56")
+location1 = Location.create(adress:"718, Prospect, Street,Altoona, PA, 16601")
+location2 = Location.create(adress:"805 Manchester Ave.Upper Darby, PA, 19082")
+location3 = Location.create(adress:"8818 Edgewood St.Ave.Upper Darby, PA, 19082")
+   
+location4 = Location.create(adress:"9861 Garden Street Lakewood, NJ 08701")
+location5 = Location.create(adress:"7804 Wall Street Sacramento, CA 95820")
+location6 = Location.create(adress:"5 Sherman Rd.Lilburn, GA 30047")
+   
+location7 = Location.create(adress:"8574 Smoky Hollow Drive")
+    
+location8 = Location.create(adress:"Philadelphia, Pennsylvania, United States")
+location9 = Location.create(adress:"45 North St.Newnan, GA 30263")
 
 
 

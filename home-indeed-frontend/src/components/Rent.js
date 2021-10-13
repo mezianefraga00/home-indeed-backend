@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../App.css";
 import { useLocation } from "react-router";
+import NewRequest from "./allrequests/NewRequest";
 export default function Rent() {
   let location = useLocation();
   console.log(location.pathname);
@@ -32,17 +33,9 @@ export default function Rent() {
                     {home.nbr_bedroom} ba {home.nbr_bathroom} ba {home.surface}{" "}
                     sqft
                   </h4>
-                  <p>
-                    {home.location.app_nbr}&nbsp;
-                    {home.location.street}&nbsp;
-                    {home.location.city}&nbsp;
-                    {home.location.state}&nbsp;
-                    {home.location.zipcode}&nbsp;
-                  </p>
+                  <p>{home.location.adress}&nbsp;</p>
                 </div>
-                <button type="button" className="btn btn-outline-info">
-                  Request Info
-                </button>
+                <NewRequest id={home.id} />
               </div>
               <br />
             </div>

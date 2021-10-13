@@ -37,11 +37,7 @@ ActiveRecord::Schema.define(version: 2021_10_07_162314) do
   end
 
   create_table "locations", force: :cascade do |t|
-    t.string "street"
-    t.string "city"
-    t.string "state"
-    t.integer "zipcode"
-    t.integer "app_nbr"
+    t.string "adress"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
