@@ -7,7 +7,6 @@ import Login from "./Login";
 import SearchLocationInput from "./search/SearchLocationInput";
 function Navbar() {
   let location = useLocation();
-  console.log(location);
   const [loginBox, setLoginBox] = useState(true);
 
   const loginBoxOpen = (e) => {
@@ -58,10 +57,10 @@ function Navbar() {
           <div className="search">
             <form className="form-inline my-2 my-lg-0">
               <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li>
+                <li className="searchinput">
                   <SearchLocationInput />
                 </li>
-                <li></li>
+
                 <li>
                   <button
                     className="btn btn-danger btn-pill"

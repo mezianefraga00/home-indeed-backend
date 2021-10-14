@@ -1,4 +1,6 @@
 class RequestsController < ApplicationController
+  skip_before_action :authorize, only: :create
+
 def index
         @requests = Request.all
         render json: @requests

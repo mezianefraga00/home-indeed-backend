@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import "../../App.css";
 
 export default function Requests({ id }) {
-  console.log(id);
   const [msg, setMsg] = useState([]);
   const client = () => {
     fetch("/requesclient/" + id)
@@ -16,7 +15,6 @@ export default function Requests({ id }) {
       client();
     }
   }, [id]);
-  console.log(msg);
   return (
     <div>
       {msg.map((home, key) => (

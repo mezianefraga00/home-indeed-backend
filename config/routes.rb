@@ -5,11 +5,14 @@ Rails.application.routes.draw do
 
   get "/showRent", to: "homes#showRent"
   get "/showSell", to: "homes#showSell"
+  
 
 
-
-  resources :owners, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   get "/mhomes/:owner_id", to: "owners#showhome"
+  post "/signup", to: "owners#create"
+  get "/me", to: "owners#show"
+  post "/login", to: "sessions#create"
+  delete "/logout", to: "sessions#destroy"
 
 
 

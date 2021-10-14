@@ -4,7 +4,6 @@ import Requests from "../allrequests/Requests";
 import { NavLink, useHistory } from "react-router-dom";
 
 export default function Dashbord(message) {
-  console.log(message);
   const [client, setClient] = useState({});
   useEffect(() => {
     fetch("/owners/1")

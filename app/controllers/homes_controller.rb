@@ -1,4 +1,6 @@
 class HomesController < ApplicationController
+  skip_before_action :authorize, only: :create
+
     
   def index
     @homes = Home.all

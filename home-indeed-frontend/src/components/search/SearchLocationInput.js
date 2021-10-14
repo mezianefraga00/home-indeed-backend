@@ -18,22 +18,22 @@ export default function SearchLocationInput() {
         });
     }
   };
-  console.log(result);
   return (
     <>
-      <MapboxAutocomplete
-        publicKey="pk.eyJ1IjoibWV6aWFuZiIsImEiOiJja3VuaXQ5amIwc3NtMnZveGdxYTlvc2pwIn0.I1lxuVnFGDG7nfq_42VDdQ"
-        inputClass="form-control search"
-        onSuggestionSelect={suggestionSelect}
-        country="us"
-        resetSearch={false}
-      />
-      <button
-        className="btn btn-outline-success my-2 my-sm-0"
-        onClick={(e) => handleSeach(e)}
-      >
-        Search
-      </button>
+      <ul>
+        <MapboxAutocomplete
+          publicKey="pk.eyJ1IjoibWV6aWFuZiIsImEiOiJja3VuaXQ5amIwc3NtMnZveGdxYTlvc2pwIn0.I1lxuVnFGDG7nfq_42VDdQ"
+          inputClass="form-control search"
+          onSuggestionSelect={suggestionSelect}
+          country="us"
+          resetSearch={false}
+        />
+      </ul>
+      <ul>
+        <button className="btn-outline-success" onClick={(e) => handleSeach(e)}>
+          Search
+        </button>
+      </ul>
     </>
   );
 }

@@ -8,13 +8,25 @@
   height: 50px;
   text-align: left;
 }
-
+.btn-outline-success {
+  margin: auto;
+  position: absolute;
+  display: inline-block;
+}
+.searchinput {
+  position: relative;
+  margin: auto;
+}
+.card-body-p-5-text-center {
+  margin-top: 4000000000000000px !important;
+}
 .search input button {
   display: table;
 }
 .imagehome {
-  height: 500px;
+  height: 470px;
   z-index: -1;
+  margin: auto;
 }
 .containerannoce {
   margin-top: 10%;

@@ -31,7 +31,6 @@ function AddHome(location) {
 
     setIsLoading(true);
     if (location_id != null) {
-      console.log(location_id);
       fetch("/homes", {
         method: "POST",
         headers: {

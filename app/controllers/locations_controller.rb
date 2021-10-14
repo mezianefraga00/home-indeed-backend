@@ -1,4 +1,6 @@
 class LocationsController < ApplicationController
+  skip_before_action :authorize, only: :create
+
     def index
         @locations = Location.all
         render json: @locations
@@ -24,7 +26,7 @@ class LocationsController < ApplicationController
 
 
       def create
-        location = Location.new(article_params)
+        location = @current_user.locations.new(article_params)
     
         if location.save
             render json: location, status: :created
@@ -38,7 +40,7 @@ class LocationsController < ApplicationController
       end
     
       def update
-        @location = Location.find(params[:id])
+        @location = @current_user.locations.find(params[:id])
     
         if @location.update(article_params)
           redirect_to @location
@@ -48,7 +50,7 @@ class LocationsController < ApplicationController
       end
     
       def destroy
-        @location = Location.find(params[:id])
+        @location = @current_user.locations.find(params[:id])
         @location.destroy
     
         redirect_to root_path

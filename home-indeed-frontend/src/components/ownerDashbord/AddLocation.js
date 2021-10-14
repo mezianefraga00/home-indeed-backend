@@ -9,7 +9,6 @@ export default function AddLocation() {
 
   const [errors, setErrors] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  console.log(id_location);
   const [adress, setSearch] = useState([]);
   function suggestionSelect(result, lat, lng, text) {
     setSearch(result);

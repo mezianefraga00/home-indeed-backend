@@ -2,10 +2,11 @@ import React, { useEffect, useState } from "react";
 import "../App.css";
 import { useLocation } from "react-router";
 import NewRequest from "./allrequests/NewRequest";
+
 export default function Rent() {
   let location = useLocation();
-  console.log(location.pathname);
   const [homes, setHomes] = useState([]);
+  const [rentId, setRentId] = useState(null);
   useEffect(() => {
     fetch("/showRent")
       .then((response) => response.json())
@@ -13,7 +14,9 @@ export default function Rent() {
         setHomes(home);
       });
   }, []);
-
+  const getHomeID = (id) => {
+    setRentId(id);
+  };
   return (
     <>
       <h1 className="text-align: center">Find your next home on Home Indeed</h1>
@@ -35,7 +38,10 @@ export default function Rent() {
                   </h4>
                   <p>{home.location.adress}&nbsp;</p>
                 </div>
-                <NewRequest id={home.id} />
+                <NewRequest
+                  id={rentId ? rentId : home.id}
+                  getHomeID={getHomeID}
+                />
               </div>
               <br />
             </div>

@@ -1,26 +1,21 @@
 import React, { useEffect, useState } from "react";
 import "../../App.css";
 
-export default function NewRequest({ id }) {
+export default function NewRequest({ id: idRent, getHomeID }) {
   const [request, setRequest] = useState([]);
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
   const [phone_nbr, setphone_nbr] = useState("");
   const [email, setemail] = useState("");
-  const [home_id, setId] = useState();
-  const [change, setChange] = useState(true);
   const date_request = new Date().toLocaleString();
 
-  const Myfunction = (e) => {
-    if (change) {
-      e.preventDefault();
-      setId(id);
-      setChange(false);
-    }
+  const Myfunction = (e, id) => {
+    e.preventDefault();
+    getHomeID(id);
   };
 
-  console.log(home_id);
-  console.log(id);
+  const home_id = idRent;
+
   const handleNewRequest = (e) => {
     e.preventDefault();
 
@@ -52,7 +47,7 @@ export default function NewRequest({ id }) {
           class="btn btn-primary"
           data-bs-toggle="modal"
           data-bs-target="#staticBackdrop"
-          onClick={(e) => Myfunction(e)}
+          onClick={(e) => Myfunction(e, idRent)}
         >
           Request more Info
         </button>
@@ -140,7 +135,6 @@ export default function NewRequest({ id }) {
                 type="button"
                 class="btn btn-secondary"
                 data-bs-dismiss="modal"
-                onClick={() => console.log(home_id)}
               >
                 Close
               </button>

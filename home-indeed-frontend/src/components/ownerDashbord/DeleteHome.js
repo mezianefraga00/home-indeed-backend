@@ -24,7 +24,6 @@ export default function DeleteHome() {
         setErros((response) => [...response, res]);
       });
   }
-  console.log(response);
   return (
     <div>
       <ul className="list-group list-group-flush">
