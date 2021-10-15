@@ -4,7 +4,7 @@ import "../../App.css";
 
 export default function DeleteHome() {
   const [value, setConfirm] = useState();
-  const owner_id = 1;
+  const owner_id = 2;
   const [myhomes, setHomes] = useState([]);
   const [response, setErros] = useState("");
 
@@ -16,11 +16,15 @@ export default function DeleteHome() {
       });
   }, []);
   function handleDelete(id) {
+    const origialListsHomes = [...myhomes];
+    const homes = origialListsHomes.filter((h) => h.id !== id);
+
     fetch(`/homes/${id}`, {
       method: "DELETE",
     })
       .then((response) => response.json())
       .then((res) => {
+        setHomes(homes);
         setErros((response) => [...response, res]);
       });
   }

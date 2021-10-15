@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../App.css";
 import { useLocation } from "react-router";
 import NewRequest from "./allrequests/NewRequest";
+import Navbar from "./Navbar";
 
 export default function Rent() {
   let location = useLocation();
@@ -19,6 +20,7 @@ export default function Rent() {
   };
   return (
     <>
+      <Navbar />
       <h1 className="text-align: center">Find your next home on Home Indeed</h1>
       <div className="containerannoce">
         <div className="row">

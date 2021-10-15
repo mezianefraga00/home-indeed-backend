@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../App.css";
+import Navbar from "./Navbar";
 export default function Buy() {
   const [homes, setHomes] = useState([]);
   useEffect(() => {
@@ -11,6 +12,7 @@ export default function Buy() {
   }, []);
   return (
     <>
+      <Navbar />
       <h1 className="text-align: center">Find your next home on Home Indeed</h1>
       <div className="containerannoce">
         <div className="row">

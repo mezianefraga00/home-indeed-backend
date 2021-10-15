@@ -1,25 +1,15 @@
 import React, { useEffect, useState } from "react";
 import "../../App.css";
 import Requests from "../allrequests/Requests";
-import { NavLink, useHistory } from "react-router-dom";
+import { NavLink, withRouter } from "react-router-dom";
 
-export default function Dashbord(message) {
-  const [client, setClient] = useState({});
-  useEffect(() => {
-    fetch("/owners/1")
-      .then((response) => response.json())
-      .then((owner) => {
-        setClient(owner);
-      });
-  }, []);
+function Dashbord(success) {
+  console.log(success);
+
+  const client = 1;
 
   return (
     <>
-      {!message ? (
-        <div className="alert-primary">Your home has been added, Thank you</div>
-      ) : (
-        <></>
-      )}
       <div className="dashButton">
         <NavLink className="btn btn-success" to="/dashbord/addlocation">
           Add Home
@@ -34,8 +24,9 @@ export default function Dashbord(message) {
         </NavLink>
       </div>
       <div>
-        <Requests id={client.id} />
+        <Requests id={client} />
       </div>
     </>
   );
 }
+export default withRouter(Dashbord);

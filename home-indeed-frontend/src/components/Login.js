@@ -1,13 +1,16 @@
 import React, { useState } from "react";
-import { Redirect } from "react-router";
+import { Redirect, withRouter } from "react-router";
+import { Link } from "react-router-dom";
 import "../App.css";
 
-export default function Login({ open, loginBoxOpen }) {
+function Login({ open, loginBoxOpen, history }) {
   const [login, setlogin] = useState("");
   const [password, setPassword] = useState("");
-  const [errors, setErrors] = useState([]);
+  const [errors, setErrors] = useState();
   const [isLoading, setIsLoading] = useState(false);
   const [redirect, setRedirect] = useState(false);
+  const [signup, setSignup] = useState(false);
+  const [owner, setOwner] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -18,18 +21,25 @@ export default function Login({ open, loginBoxOpen }) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ login, password }),
-    }).then((r) => {
-      setIsLoading(false);
-      if (r.ok) {
-        r.json().then((user) => setRedirect(true));
-      } else {
-        r.json().then((err) => setErrors(err.errors));
-      }
-    });
+    })
+      .then((response) => response.json())
+      .then((owner) => {
+        setIsLoading(false);
+        if (owner.id) {
+          setRedirect(true);
+          setOwner(owner.id);
+          history.replace("/dashbord", owner.id);
+        } else {
+          setErrors(owner.errors[0]);
+        }
+      });
+    console.log("test", history);
   }
+
+  console.log(redirect);
   return !open ? (
-    <div classNameName="divmodal">
-      <section className="vh-100" style={{ backgroundcolor: +"#508bfc" }}>
+    <div className="divmodal">
+      <section className="vh-100" style={{ backgroundcolor: "#508bfc" }}>
         <div className="container py-5 h-100">
           <div className="row d-flex justify-content-center align-items-center h-100">
             <div className="col-12 col-md-8 col-lg-6 col-xl-5">
@@ -70,17 +80,6 @@ export default function Login({ open, loginBoxOpen }) {
                     </label>
                   </div>
 
-                  <div className="form-check d-flex justify-content-start mb-4">
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                      value=""
-                      id="form1Example3"
-                    />
-                    <label className="form-check-label" htmlFor="form1Example3">
-                      Remember password
-                    </label>
-                  </div>
                   <button
                     className="btn btn-primary btn-lg btn-block"
                     type="submit"
@@ -88,6 +87,18 @@ export default function Login({ open, loginBoxOpen }) {
                   >
                     Login
                   </button>
+                  {errors ? <p style={{ color: "red" }}>{errors}</p> : <></>}
+                  <h6>Don't have an account ?</h6>
+                  <button
+                    className="btn btn-primary btn-lg btn-block"
+                    onClick={() => setSignup(true)}
+                  >
+                    {" "}
+                    Sign-up
+                  </button>
+
+                  {redirect ? loginBoxOpen : <></>}
+                  {signup ? <Redirect to="/signup" /> : <></>}
                 </div>
               </div>
             </div>
@@ -99,3 +110,4 @@ export default function Login({ open, loginBoxOpen }) {
     <div></div>
   );
 }
+export default withRouter(Login);

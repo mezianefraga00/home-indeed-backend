@@ -8,25 +8,35 @@
   height: 50px;
   text-align: left;
 }
-.btn-outline-success {
-  margin: auto;
-  position: absolute;
-  display: inline-block;
+.vh-100 div {
+  position: -webkit-sticky;
+  display: table; /* This is important */
+  width: 200px;
+  min-width: 40px;
+  margin-top: -20px;
 }
 .searchinput {
   position: relative;
   margin: auto;
 }
-.card-body-p-5-text-center {
-  margin-top: 4000000000000000px !important;
-}
+
 .search input button {
   display: table;
 }
+.searchInput {
+  display: inline-block;
+}
 .imagehome {
-  height: 470px;
+  height: 500px;
   z-index: -1;
   margin: auto;
+}
+.sadface {
+  height: 400px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 .containerannoce {
   margin-top: 10%;

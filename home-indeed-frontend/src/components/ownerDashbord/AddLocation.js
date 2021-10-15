@@ -38,6 +38,9 @@ export default function AddLocation() {
 
   return (
     <>
+      <div class="alert alert-primary" role="alert">
+        Please add your home location
+      </div>
       <MapboxAutocomplete
         publicKey="pk.eyJ1IjoibWV6aWFuZiIsImEiOiJja3VuaXQ5amIwc3NtMnZveGdxYTlvc2pwIn0.I1lxuVnFGDG7nfq_42VDdQ"
         inputClass="form-control search"

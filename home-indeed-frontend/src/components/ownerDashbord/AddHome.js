@@ -21,7 +21,7 @@ function AddHome(location) {
   const [isLoading, setIsLoading] = useState(false);
   const [redir, setRedirect] = useState(false);
 
-  const owner_id = 1;
+  const owner_id = 2;
   let location_id = location.id;
 
   // ...
