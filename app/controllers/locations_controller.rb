@@ -1,13 +1,13 @@
 class LocationsController < ApplicationController
-  skip_before_action :authorize, only: :create
+  skip_before_action :authorize, except: :create
 
-    def index
+       def index
         @locations = Location.all
         render json: @locations
         end
     
       def show
-    @locations = Location.find(params[:id])
+      @locations = Location.find(params[:id])
       render json: @locations
       end
     
@@ -17,13 +17,9 @@ class LocationsController < ApplicationController
     
 
       def findlocation 
-        
-       search= Location.where("adress LIKE '%#{params[:adress].downcase}%'" )
+        search= Home.joins(:location).where("adress LIKE '%#{params[:adress].downcase}%'" )
         render json: search
-
       end
-
-
 
       def create
         location = @current_user.locations.new(article_params)

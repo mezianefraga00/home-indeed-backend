@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "../App.css";
 import Navbar from "./Navbar";
+import NewRequest from "./allrequests/NewRequest";
 export default function Buy() {
   const [homes, setHomes] = useState([]);
+  const [rentId, setRentId] = useState(null);
   useEffect(() => {
     fetch("/showSell")
       .then((response) => response.json())
@@ -10,6 +12,9 @@ export default function Buy() {
         setHomes(home);
       });
   }, []);
+  const getHomeID = (id) => {
+    setRentId(id);
+  };
   return (
     <>
       <Navbar />
@@ -32,9 +37,10 @@ export default function Buy() {
                   </h4>
                   <p>{home.location.adress}&nbsp;</p>
                 </div>
-                <button type="button" className="btn btn-outline-info">
-                  Request Info
-                </button>
+                <NewRequest
+                  id={rentId ? rentId : home.id}
+                  getHomeID={getHomeID}
+                />
               </div>
               <br />
             </div>

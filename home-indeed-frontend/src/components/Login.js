@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Redirect, withRouter } from "react-router";
 import { Link } from "react-router-dom";
 import "../App.css";
+import Logout from "./ownerDashbord/Logout";
 
 function Login({ open, loginBoxOpen, history }) {
   const [login, setlogin] = useState("");
@@ -33,10 +34,8 @@ function Login({ open, loginBoxOpen, history }) {
           setErrors(owner.errors[0]);
         }
       });
-    console.log("test", history);
   }
 
-  console.log(redirect);
   return !open ? (
     <div className="divmodal">
       <section className="vh-100" style={{ backgroundcolor: "#508bfc" }}>
@@ -87,6 +86,7 @@ function Login({ open, loginBoxOpen, history }) {
                   >
                     Login
                   </button>
+
                   {errors ? <p style={{ color: "red" }}>{errors}</p> : <></>}
                   <h6>Don't have an account ?</h6>
                   <button

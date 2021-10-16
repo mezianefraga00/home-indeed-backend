@@ -8,7 +8,6 @@ import { propTypes } from "react-markdown";
 import SearchLocationInput from "./search/SearchLocationInput";
 function Navbar({ history }) {
   let location = useLocation();
-  console.log(location);
   const [loginBox, setLoginBox] = useState(true);
 
   const loginBoxOpen = (e) => {
@@ -85,7 +84,6 @@ function Navbar({ history }) {
         src="/house.jpg"
         alt="home page"
       ></img>
-      ;
     </>
   );
 }

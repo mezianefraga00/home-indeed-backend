@@ -7,11 +7,11 @@ function SearchResult(search) {
   const [rentId, setRentId] = useState(null);
 
   const home = [...search.location.state.message];
-  console.log(home);
+
   const getHomeID = (id) => {
     setRentId(id);
   };
-  console.log(home.length);
+
   return (
     <>
       <Navbar />

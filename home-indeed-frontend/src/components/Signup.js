@@ -36,7 +36,6 @@ function Signup() {
       }
     });
   }
-  console.log(redirect);
   return (
     <section className="vh-1000" style={{ backgroundColor: "#eee" }}>
       <div className="container h-100">
@@ -174,6 +173,11 @@ function Signup() {
                         </button>
                       </div>
                     </form>
+                    {redirect ? (
+                      <Redirect to="/dashbord" />
+                    ) : (
+                      <p style={{ color: "red" }}>{errors}</p>
+                    )}
                   </div>
                   <div className="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
                     <img
@@ -188,7 +192,6 @@ function Signup() {
           </div>
         </div>
       </div>
-      {redirect ? <Redirect to="/dashbord" /> : <></>}
     </section>
   );
 }
