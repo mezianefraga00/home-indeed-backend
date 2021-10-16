@@ -3,16 +3,16 @@ import { Redirect, withRouter } from "react-router-dom";
 import "../../App.css";
 
 function AddHome(location) {
-  const [home_type, setHome] = useState("");
+  const [home_type, setHome] = useState("Rent");
   const [surface, setSurface] = useState("");
-  const [parking, setPark] = useState("");
-  const [heating, setHeat] = useState("");
-  const [backyard, setBack] = useState("");
-  const [laundry, setLaun] = useState("");
-  const [dishawasher, setDish] = useState("");
-  const [cooling, setCool] = useState("");
-  const [deal_type, setDeal] = useState("");
-  const [pets_allowed, setPet] = useState("");
+  const [parking, setPark] = useState("Yes");
+  const [heating, setHeat] = useState("Yes");
+  const [backyard, setBack] = useState("Yes");
+  const [laundry, setLaun] = useState("Yes");
+  const [dishawasher, setDish] = useState("Yes");
+  const [cooling, setCool] = useState("Yes");
+  const [deal_type, setDeal] = useState("Buy");
+  const [pets_allowed, setPet] = useState("Yes");
   const [nbr_bedroom, setBed] = useState("");
   const [nbr_bathroom, setBath] = useState("");
   const [price, setPrice] = useState("");
@@ -82,15 +82,16 @@ function AddHome(location) {
       {user !== false ? (
         <form className="dashform">
           <div className="form-group col-md-6">
-            <label htmlFor="exampleFormControlInput1">Home Type</label>
+            <label htmlFor="exampleFormControlInput1">Deal Type</label>
             <select
               className="form-control"
               id="deal_type"
-              value={deal_type}
               onChange={(e) => setDeal(e.target.value)}
             >
-              <option>Rent</option>
-              <option>Buy</option>
+              <option value="Rent" selected>
+                Rent
+              </option>
+              <option value="Buy">Buy</option>
             </select>
           </div>
           <div className="form-group col-md-6">

@@ -22,7 +22,7 @@ class LocationsController < ApplicationController
       end
 
       def create
-        location = @current_user.locations.new(article_params)
+        location = Location.new(article_params)
     
         if location.save
             render json: location, status: :created

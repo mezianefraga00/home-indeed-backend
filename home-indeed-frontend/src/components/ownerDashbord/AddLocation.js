@@ -39,7 +39,7 @@ export default function AddLocation() {
         setIsLoading(false);
         setIdLocation(r.id);
         if (!r.id) {
-          r.json().then((err) => setErrors(err.errors));
+          setErrors("Enter Correct Adress");
         }
       });
   }
