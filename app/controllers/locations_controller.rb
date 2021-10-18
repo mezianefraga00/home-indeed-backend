@@ -14,13 +14,9 @@ class LocationsController < ApplicationController
       end
     
       def create
-        location = Location.new(article_params)
-    
-        if location.save
-            render json: location, status: :created
-        else
-          render :new, status: :unprocessable_entity
-        end
+        location = Location.create!(article_params)
+       
+        render json: location, status: :created
       end
     
       def edit
@@ -46,6 +42,6 @@ class LocationsController < ApplicationController
     
       
         def article_params
-          params.require(:location).permit(:street, :city, :state, :zipcode, :app_nbr)
+          params.permit(:street, :city, :state, :zipcode, :app_nbr)
         end
 end

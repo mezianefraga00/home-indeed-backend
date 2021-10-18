@@ -48,3 +48,22 @@
   position: absolute;
   right: 20px;
 }
+.alert-primary {
+  animation: cssAnimation 0s ease-in 3s forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+@keyframes cssAnimation {
+  to {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+}
+@-webkit-keyframes cssAnimation {
+  to {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+  }
+}

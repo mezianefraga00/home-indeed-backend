@@ -20,12 +20,7 @@ export default function Requests({ id }) {
   return (
     <div>
       {msg.map((home, key) => (
-        <div class="alert alert-info" role="alert">
-          <img
-            className="imgdash"
-            src={"/" + home.home.img_url + ".jpg"}
-            alt="home page"
-          ></img>
+        <div className="alert alert-info" role="alert">
           <h1>{home.message}</h1>
           <h3>{home.date_request}</h3>
           <h3>{home.name}</h3>

@@ -21,11 +21,6 @@ export default function Rent() {
           {homes.map((home, key) => (
             <div className="col-md-4">
               <div className="carbon-example flex-wrapper">
-                <img
-                  className="imgdash"
-                  src={"/" + home.img_url + ".jpg"}
-                  alt="home page"
-                ></img>
                 <div className="home-info">
                   <h3>{"$" + home.price + "/mo"}</h3>
                   <h4>
@@ -40,7 +35,7 @@ export default function Rent() {
                     {home.location.zipcode}&nbsp;
                   </p>
                 </div>
-                <button type="button" class="btn btn-outline-info">
+                <button type="button" className="btn btn-outline-info">
                   Request Info
                 </button>
               </div>

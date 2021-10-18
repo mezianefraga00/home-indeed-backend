@@ -23,55 +23,55 @@ location9 = Location.create(street: "Brida", city: "Elmira", state: "NY", zipcod
 home1 = Home.create(home_type: "TownHome",surface: "1200",parking: "Yes",
     heating: "Yes",backyard: "yes",laundry: "Yes",dishawasher: "yes",
     cooling: "Yes",deal_type:
-    "Rent",nbr_bedroom: 4,nbr_bathroom: 1,pets_allowed: "No",img_url: "image1",
+    "Rent",nbr_bedroom: 4,nbr_bathroom: 1,pets_allowed: "No",
     description:"Beautiful location", price: 2300,  owner_id: 1, location_id: 1)
 
 home2 = Home.create(home_type: "TownHome",surface: "1200",parking: "Yes",
      heating: "Yes",backyard: "no",laundry: "Yes",dishawasher: "yes",
      cooling: "Yes",deal_type:
-    "Rent",nbr_bedroom: 4,nbr_bathroom: 1,pets_allowed: "No",img_url: "image2",
+    "Rent",nbr_bedroom: 4,nbr_bathroom: 1,pets_allowed: "No",
     description:"Beautiful location",  price: 2300,   owner_id: 2, location_id: 2)
 
 home3 = Home.create(home_type: "TownHome",surface: "1200",parking: "Yes",
     heating: "Yes",backyard: "yes",laundry: "Yes",dishawasher: "yes",
     cooling: "Yes",deal_type:
-    "Buy",nbr_bedroom: 4,nbr_bathroom: 1,pets_allowed: "No",img_url: "image3",
+    "Buy",nbr_bedroom: 4,nbr_bathroom: 1,pets_allowed: "No",
     description:"Beautiful location", price: 420000,  owner_id: 3, location_id: 3)
 
 home4 = Home.create(home_type: "TownHome", surface: "1200",parking: "Yes",
     heating: "Yes",backyard: "yes",laundry: "Yes",dishawasher: "yes",
     cooling: "Yes",deal_type:
-    "Rent",nbr_bedroom: 1,nbr_bathroom: 1,pets_allowed: "No",img_url: "image4",
+    "Rent",nbr_bedroom: 1,nbr_bathroom: 1,pets_allowed: "No",
     description:"Beautiful location", price: 2300,   owner_id: 4, location_id: 4)
 
 home5 = Home.create(home_type: "TownHome",surface: "1200",parking: "Yes",
     heating: "Yes",backyard: "yes",laundry: "Yes",dishawasher: "yes",
     cooling: "Yes",deal_type:
-    "Rent",nbr_bedroom: 4,nbr_bathroom: 1,pets_allowed: "No",img_url: "image5",
+    "Rent",nbr_bedroom: 4,nbr_bathroom: 1,pets_allowed: "No",
     description:"Beautiful location",  price: 2300,   owner_id: 5, location_id: 5)
 
 home6 = Home.create(home_type: "TownHome",surface: "1200",parking: "Yes",
     heating: "Yes",backyard: "yes",laundry: "Yes",dishawasher: "yes",
     cooling: "Yes",deal_type:
-    "Buy",nbr_bedroom: "2",nbr_bathroom: 1,pets_allowed: "No",img_url: "image6",
+    "Buy",nbr_bedroom: "2",nbr_bathroom: 1,pets_allowed: "No",
     description:"Beautiful location", price: 530500,  owner_id: 6, location_id: 6)
 
 home7 = Home.create(home_type: "TownHome",surface: "1200",parking: "Yes",
     heating: "Yes",backyard: "yes",laundry: "Yes",dishawasher: "yes",
     cooling: "Yes",deal_type:
-    "Rent",nbr_bedroom: 4,nbr_bathroom: 1,pets_allowed: "No",img_url: "image7",
+    "Rent",nbr_bedroom: 4,nbr_bathroom: 1,pets_allowed: "No",
     description:"Beautiful location", price: 2300,   owner_id: 7, location_id: 7)
 
 home8 = Home.create(home_type: "TownHome",surface: "1200",parking: "Yes",
     heating: "Yes",backyard: "yes",laundry: "Yes",dishawasher: "yes",
     cooling: "Yes",deal_type:
-    "Rent",nbr_bedroom: 4,nbr_bathroom: 1,pets_allowed: "No",img_url: "image8",
+    "Rent",nbr_bedroom: 4,nbr_bathroom: 1,pets_allowed: "No",
     description:"Beautiful location", price: 2300,   owner_id: 8, location_id: 8)
 
 home9 = Home.create(home_type: "TownHome",surface: "1200",parking: "Yes",
     heating: "Yes",backyard: "yes",laundry: "Yes",dishawasher: "yes",
     cooling: "Yes",deal_type:
-    "Rent",nbr_bedroom: 4,nbr_bathroom: 1,pets_allowed: "No",img_url: "image9",
+    "Rent",nbr_bedroom: 4,nbr_bathroom: 1,pets_allowed: "No",
     description:"Beautiful location", price: 2300,   owner_id: 1, location_id: 9)
 
 

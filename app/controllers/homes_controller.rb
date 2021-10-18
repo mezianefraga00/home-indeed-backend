@@ -44,8 +44,8 @@ end
 
 
 def article_params
-  params.permit(:home_type, :surface, :parking, :heating, :backyard, :laundry, :dishawasher,
-     :cooling, :deal_type, :pets_allowed, :img_url, :nbr_bedroom, :nbr_bathroom, :price, :description, :owner_id, :location_id)
+  params.permit(:home_type, :surface, :parking, :heating, :backyard, :laundry, :dishawasher, :featured_image,
+     :cooling, :deal_type, :pets_allowed,  :nbr_bedroom, :nbr_bathroom, :price, :description, :owner_id, :location_id)
 end
 
 end
