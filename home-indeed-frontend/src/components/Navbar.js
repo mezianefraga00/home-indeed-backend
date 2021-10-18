@@ -4,9 +4,10 @@ import { NavLink } from "react-router-dom";
 import { useLocation } from "react-router";
 
 import Login from "./Login";
-function Navbar() {
+import { propTypes } from "react-markdown";
+import SearchLocationInput from "./search/SearchLocationInput";
+function Navbar({ history }) {
   let location = useLocation();
-  console.log(location);
   const [loginBox, setLoginBox] = useState(true);
 
   const loginBoxOpen = (e) => {
@@ -58,27 +59,15 @@ function Navbar() {
             <form className="form-inline my-2 my-lg-0">
               <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li>
-                  <input
-                    className="form-control mr-sm-2"
-                    type="search"
-                    placeholder="Search"
-                    aria-label="Search"
-                  ></input>
+                  <SearchLocationInput />
                 </li>
-                <li>
-                  <button
-                    className="btn btn-outline-success my-2 my-sm-0"
-                    type="submit"
-                  >
-                    Search
-                  </button>
-                </li>
+
                 <li>
                   <button
                     className="btn btn-danger btn-pill"
                     onClick={loginBoxOpen}
                   >
-                    LOGIN
+                    My Account
                   </button>
                 </li>
               </ul>
@@ -87,7 +76,7 @@ function Navbar() {
         </nav>
       </div>
       <div className="containerlo">
-        <Login open={loginBox} loginBoxOpen={loginBoxOpen} />
+        <Login history={history} open={loginBox} loginBoxOpen={loginBoxOpen} />
       </div>
       <img
         className="imagehome"
@@ -95,7 +84,6 @@ function Navbar() {
         src="/house.jpg"
         alt="home page"
       ></img>
-      ;
     </>
   );
 }

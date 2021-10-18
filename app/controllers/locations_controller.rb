@@ -1,11 +1,13 @@
 class LocationsController < ApplicationController
-    def index
+  skip_before_action :authorize, except: :create
+
+       def index
         @locations = Location.all
         render json: @locations
         end
     
       def show
-    @locations = Location.find(params[:id])
+      @locations = Location.find(params[:id])
       render json: @locations
       end
     
@@ -13,6 +15,12 @@ class LocationsController < ApplicationController
         @location = Location.new
       end
     
+
+      def findlocation 
+        search= Home.joins(:location).where("adress LIKE '%#{params[:adress].downcase}%'" )
+        render json: search
+      end
+
       def create
         location = Location.create!(article_params)
        
@@ -24,7 +32,7 @@ class LocationsController < ApplicationController
       end
     
       def update
-        @location = Location.find(params[:id])
+        @location = @current_user.locations.find(params[:id])
     
         if @location.update(article_params)
           redirect_to @location
@@ -34,7 +42,7 @@ class LocationsController < ApplicationController
       end
     
       def destroy
-        @location = Location.find(params[:id])
+        @location = @current_user.locations.find(params[:id])
         @location.destroy
     
         redirect_to root_path
@@ -42,6 +50,10 @@ class LocationsController < ApplicationController
     
       
         def article_params
+<<<<<<< HEAD
           params.permit(:street, :city, :state, :zipcode, :app_nbr)
+=======
+          params.permit(:adress)
+>>>>>>> 984a89dc2c9b08caad1e6b1072e6a4dc73ad5051
         end
 end

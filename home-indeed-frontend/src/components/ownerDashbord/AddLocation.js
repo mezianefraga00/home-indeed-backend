@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../../App.css";
+<<<<<<< HEAD
 import Requests from "./Requests";
 import { NavLink } from "react-router-dom";
 import AddHome from "./AddHome";
@@ -10,11 +11,34 @@ export default function AddLocation() {
   const [zipcode, setZip] = useState("");
   const [app_nbr, setApp] = useState("");
 
+=======
+import { Redirect } from "react-router";
+
+import AddHome from "./AddHome";
+import MapboxAutocomplete from "react-mapbox-autocomplete";
+
+export default function AddLocation() {
+  const [user, setUser] = useState(null);
+  useEffect(() => {
+    // auto-login
+    fetch("/me").then((r) => {
+      r.ok ? r.json() : setUser(false);
+    });
+  }, []);
+>>>>>>> 984a89dc2c9b08caad1e6b1072e6a4dc73ad5051
   const [id_location, setIdLocation] = useState(null);
 
   const [errors, setErrors] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+<<<<<<< HEAD
   console.log(id_location);
+=======
+  const [adress, setSearch] = useState([]);
+  function suggestionSelect(result, lat, lng, text) {
+    setSearch(result);
+  }
+
+>>>>>>> 984a89dc2c9b08caad1e6b1072e6a4dc73ad5051
   function handleLocation(e) {
     e.preventDefault();
     setIsLoading(true);
@@ -24,10 +48,14 @@ export default function AddLocation() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
+<<<<<<< HEAD
         city,
         state,
         zipcode,
         app_nbr,
+=======
+        adress,
+>>>>>>> 984a89dc2c9b08caad1e6b1072e6a4dc73ad5051
       }),
     })
       .then((response) => response.json())
@@ -35,12 +63,17 @@ export default function AddLocation() {
         setIsLoading(false);
         setIdLocation(r.id);
         if (!r.id) {
+<<<<<<< HEAD
           r.json().then((err) => setErrors(err.errors));
+=======
+          setErrors("Enter Correct Adress");
+>>>>>>> 984a89dc2c9b08caad1e6b1072e6a4dc73ad5051
         }
       });
   }
 
   return (
+<<<<<<< HEAD
     <div>
       <h2>Adress</h2>
       <form className="dashform">
@@ -109,5 +142,31 @@ export default function AddLocation() {
         {id_location != null ? <AddHome id={id_location} /> : <></>}
       </form>
     </div>
+=======
+    <>
+      {user !== false ? (
+        <>
+          <div class="alert alert-primary" role="alert">
+            Please add your home location
+          </div>
+          <MapboxAutocomplete
+            publicKey="pk.eyJ1IjoibWV6aWFuZiIsImEiOiJja3VuaXQ5amIwc3NtMnZveGdxYTlvc2pwIn0.I1lxuVnFGDG7nfq_42VDdQ"
+            inputClass="form-control search"
+            onSuggestionSelect={suggestionSelect}
+            country="us"
+            resetSearch={false}
+          />
+
+          <button className="dashbtn" onClick={handleLocation}>
+            {" "}
+            Next
+          </button>
+          {id_location != null ? <AddHome id={id_location} /> : <></>}
+        </>
+      ) : (
+        <Redirect to="/" />
+      )}
+    </>
+>>>>>>> 984a89dc2c9b08caad1e6b1072e6a4dc73ad5051
   );
 }

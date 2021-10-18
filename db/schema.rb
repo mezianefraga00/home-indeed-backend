@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2021_10_09_025543) do
 
+<<<<<<< HEAD
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -38,14 +39,34 @@ ActiveRecord::Schema.define(version: 2021_10_09_025543) do
     t.integer "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+=======
+  create_table "homes", force: :cascade do |t|
+    t.string "home_type"
+    t.string "surface"
+    t.string "parking"
+    t.string "heating"
+    t.string "backyard"
+    t.string "laundry"
+    t.string "dishawasher"
+    t.string "cooling"
+    t.string "deal_type"
+    t.string "pets_allowed"
+    t.string "img_url"
+    t.integer "nbr_bedroom"
+    t.integer "nbr_bathroom"
+    t.integer "price"
+    t.string "description"
+    t.integer "owner_id"
+    t.integer "location_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["location_id"], name: "index_homes_on_location_id"
+    t.index ["owner_id"], name: "index_homes_on_owner_id"
+>>>>>>> 984a89dc2c9b08caad1e6b1072e6a4dc73ad5051
   end
 
   create_table "locations", force: :cascade do |t|
-    t.string "street"
-    t.string "city"
-    t.string "state"
-    t.integer "zipcode"
-    t.integer "app_nbr"
+    t.string "adress"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

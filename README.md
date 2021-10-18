@@ -1,24 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Home-indeed is Home a home search application
 
-Things you may want to cover:
+As a visitor : - Browse Rentals Houses - Browse to sell houses - Make a search by location to find houses near your area - Send Request to owner
 
-* Ruby version
+A visitor can either Login if already has an account or Signup and become a User
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+As a user : - Add Home to the database - Delete A house posted - View request - Browse Rentals Houses - Browse to sell houses - Make a search by location to find houses near your area

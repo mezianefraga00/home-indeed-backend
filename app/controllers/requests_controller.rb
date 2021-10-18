@@ -1,48 +1,34 @@
 class RequestsController < ApplicationController
-def index
+  skip_before_action :authorize
+
+      def index
         @requests = Request.all
         render json: @requests
       end
 
       def requesclient
-      render json: Request.joins(:home).where(homes: { id: Home.find(params[:owner_id]) })
+        render json: Request.joins(:home).where(homes: { id: Home.find(params[:owner_id]) })
+      
       end
 
 
-  def new
-    @request = Request.new
-  end
+      def new
+        @request = Request.new
+      end
 
-  def create
-    request = Request.new(article_params)
+      def create
+        @request = Request.create!(article_params)
+   
+        render json: @request, status: :created
+      end
 
-    if request.save
-        render json: request, status: :created
-    else
-      render :new, status: :unprocessable_entity
-    end
-  end
 
-  def edit
-    @request = Request.find(params[:id])
-  end
+      def destroy
+        @request = Request.find(params[:id])
+        @request.destroy
 
-  def update
-    @request = Request.find(params[:id])
-
-    if @request.update(article_params)
-      redirect_to @request
-    else
-      render :edit, status: :unprocessable_entity
-    end
-  end
-
-  def destroy
-    @request = Request.find(params[:id])
-    @request.destroy
-
-    redirect_to root_path
-  end
+        redirect_to root_path
+      end
 
   
     def article_params

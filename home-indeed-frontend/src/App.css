@@ -8,13 +8,35 @@
   height: 50px;
   text-align: left;
 }
+.vh-100 div {
+  position: -webkit-sticky;
+  display: table; /* This is important */
+  width: 200px;
+  min-width: 40px;
+  margin-top: -20px;
+}
+.searchinput {
+  position: relative;
+  margin: auto;
+}
 
 .search input button {
   display: table;
 }
+.searchInput {
+  display: inline-block;
+}
 .imagehome {
   height: 500px;
   z-index: -1;
+  margin: auto;
+}
+.sadface {
+  height: 400px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 .containerannoce {
   margin-top: 10%;

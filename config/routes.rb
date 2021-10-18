@@ -1,14 +1,32 @@
 Rails.application.routes.draw do
   resources :requests
-  resources :homes, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+  
+  resources :homes, only: [:index, :new, :create, :edit, :update, :destroy]
 
+##Home Route  
+  get "/myhomes/:owner_id", to: "homes#showhome"
   get "/showRent", to: "homes#showRent"
   get "/showSell", to: "homes#showSell"
+  
+
+###Owners Route
+  get "/mhomes/:owner_id", to: "owners#showhome"
+  post "/signup", to: "owners#create"
+  get "/me", to: "owners#show"
+##Session Route  
+  post "/login", to: "sessions#create"
+  delete "/logout", to: "sessions#destroy"
 
 
 
-  resources :owners, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   resources :locations, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+  
+  get "/search/:adress", to: "locations#findlocation"
+
+
+  
+
+
 
 
 

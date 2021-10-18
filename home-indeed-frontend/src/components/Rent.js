@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "../App.css";
 import { useLocation } from "react-router";
+import NewRequest from "./allrequests/NewRequest";
+import Navbar from "./Navbar";
+
 export default function Rent() {
   let location = useLocation();
-  console.log(location.pathname);
   const [homes, setHomes] = useState([]);
+  const [rentId, setRentId] = useState(null);
   useEffect(() => {
     fetch("/showRent")
       .then((response) => response.json())
@@ -12,9 +15,12 @@ export default function Rent() {
         setHomes(home);
       });
   }, []);
-
+  const getHomeID = (id) => {
+    setRentId(id);
+  };
   return (
     <>
+      <Navbar />
       <h1 className="text-align: center">Find your next home on Home Indeed</h1>
       <div className="containerannoce">
         <div className="row">
@@ -27,17 +33,18 @@ export default function Rent() {
                     {home.nbr_bedroom} ba {home.nbr_bathroom} ba {home.surface}{" "}
                     sqft
                   </h4>
-                  <p>
-                    {home.location.app_nbr}&nbsp;
-                    {home.location.street}&nbsp;
-                    {home.location.city}&nbsp;
-                    {home.location.state}&nbsp;
-                    {home.location.zipcode}&nbsp;
-                  </p>
+                  <p>{home.location.adress}&nbsp;</p>
                 </div>
+<<<<<<< HEAD
                 <button type="button" className="btn btn-outline-info">
                   Request Info
                 </button>
+=======
+                <NewRequest
+                  id={rentId ? rentId : home.id}
+                  getHomeID={getHomeID}
+                />
+>>>>>>> 984a89dc2c9b08caad1e6b1072e6a4dc73ad5051
               </div>
               <br />
             </div>
